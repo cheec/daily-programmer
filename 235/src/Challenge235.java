@@ -16,9 +16,9 @@ public class Challenge235 {
         Scanner sc = new Scanner(System.in);
         
         while (true) {
-            ScoreSheet score = new ScoreSheet(sc.nextLine().trim());
-            System.out.println(String.format(MESSAGE_SCORE_SHEET, score.getScoreSheet()));
-            System.out.println(String.format(MESSAGE_SCORE_VALUE, score.getScore()));
+            ScoreSheet scoreSheet = new ScoreSheet(sc.nextLine());
+            System.out.println(String.format(MESSAGE_SCORE_SHEET, scoreSheet));
+            System.out.println(String.format(MESSAGE_SCORE_VALUE, scoreSheet.getScore()));
         }
     }
 }
@@ -29,25 +29,26 @@ class ScoreSheet {
     private List<Frame> frames;
     private int totalScore;
     
-    public ScoreSheet(String scoreSheet) {
-        this.fullScoreSheet = scoreSheet == null ? "" : scoreSheet;
-        determineFrames();
-        determineTotalScore();
+    public ScoreSheet(String fullScoreSheet) {
+        this.fullScoreSheet = fullScoreSheet == null ? "" : fullScoreSheet.trim();
+        initFrames();
+        calcTotalScore();
     }
     
     public int getScore() {
-        return this.totalScore;
+        return totalScore;
     }
     
-    public String getScoreSheet() {
+    @Override
+    public String toString() {
         return fullScoreSheet;
     }
     
-    private void determineTotalScore() {
-        this.totalScore = frames.stream().collect(Collectors.summingInt(f -> f.getFrameScore()));
+    private void calcTotalScore() {
+        totalScore = frames.stream().collect(Collectors.summingInt(f -> f.getFrameScore()));
     }
     
-    private void determineFrames() {
+    private void initFrames() {
         frames = Stream.of(fullScoreSheet.split("\\s+"))
                 .map(Frame::new)
                 .collect(Collectors.toList());
@@ -57,40 +58,18 @@ class ScoreSheet {
 class Frame {
     
     private String frameText;
-    private FrameType frameType;
     private int frameScore;
     
-    private enum FrameType {
-        LAST, STRIKE, STANDARD
-    }
-    
-    public Frame(String frameValue) {
-        this.frameText = frameValue == null ? "" : frameValue;
-        determineFrameType();
-        determineFrameScore();
+    public Frame(String frameText) {
+        this.frameText = frameText == null ? "" : frameText.trim();
+        calcFrameScore();
     }
     
     public int getFrameScore() {
         return frameScore;
     }
     
-    private void determineFrameScore() {
+    private void calcFrameScore() {
         
-    }
-    
-    private void determineFrameType() {
-        switch (frameText.length()) {
-        case 1 :
-            frameType = FrameType.STRIKE;
-            return;
-        case 2 :
-            frameType = FrameType.STANDARD;
-            return;
-        case 3 :
-            frameType = FrameType.LAST;
-            return;
-        default :
-            return;
-        }
     }
 }
