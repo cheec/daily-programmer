@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/*
+ * reddit.com/r/dailyprogrammer/comments/3ntsni/20151007_challenge_235_intermediate_scoring_a/
+ */
 public class Challenge235 {
     
     private static final String MESSAGE_SCORE_SHEET = "Bowling sheet: %1$s";
