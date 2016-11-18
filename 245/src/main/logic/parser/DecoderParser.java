@@ -1,6 +1,7 @@
 package main.logic.parser;
 
 import main.logic.command.Command;
+import main.logic.command.DecodeCommand;
 
 public class DecoderParser extends Parser {
     
@@ -14,11 +15,10 @@ public class DecoderParser extends Parser {
         }
         return instance;
     }
-
+    
     @Override
     public Command createCommand(String... args) {
-        // TODO Auto-generated method stub
-        return null;
+        return new DecodeCommand(args[0], args[1]);
     }
     
 }
