@@ -15,11 +15,13 @@ public class Challenge235 {
             + "Total score: %2$d";
     
     private static final String TERMINATE = "q";
+    private static final String MESSAGE_TERMINATE = "q/Q to Quit";
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Logic logic = ScoreLogic.getInstance();
         
+        System.out.println(MESSAGE_TERMINATE);
         String input = sc.nextLine();
         while (!input.equalsIgnoreCase(TERMINATE)) {
             int totalScore = logic.execute(input);
