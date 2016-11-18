@@ -14,10 +14,11 @@ public class EncoderParser extends Parser {
         }
         return instance;
     }
-    
+
     @Override
-    public Command parse(String... args) {
+    public Command createCommand(String... args) {
         // TODO Auto-generated method stub
         return null;
     }
+    
 }
