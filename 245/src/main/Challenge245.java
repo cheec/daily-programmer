@@ -50,7 +50,7 @@ public class Challenge245 {
     
     private static CommandResult executeCommand(String input) {
         if (isDecoding) {
-            return LOGIC.execute(input, SC.nextLine());
+            return LOGIC.execute(input, SC.nextLine()); // decoding require an additional line of input
         } else {
             return LOGIC.execute(input);
         }
