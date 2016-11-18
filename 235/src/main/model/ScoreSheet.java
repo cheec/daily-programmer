@@ -20,12 +20,8 @@ public class ScoreSheet {
         return frames;
     }
     
-    public String getFullSheet() {
-        return sheet;
-    }
-    
     @Override
     public String toString() {
-        return frames.toString();
+        return sheet;
     }
 }

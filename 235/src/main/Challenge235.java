@@ -12,7 +12,7 @@ public class Challenge235 {
     
     private static final String MESSAGE_SCORE_RESULT = 
             "Bowling sheet: %1$s\n" 
-            + "Total score: %1$d";
+            + "Total score: %2$d";
     
     private static final String TERMINATE = "q";
     
