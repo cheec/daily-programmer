@@ -11,15 +11,46 @@ import main.logic.command.CommandResult;
  */
 public class Challenge245 {
     
-    @SuppressWarnings("resource")
+    private static final Scanner SC = new Scanner(System.in);
+    private static final Logic LOGIC = LogicManager.getInstance();
+    
+    private static boolean isDecoding = true;
+    
     public static void main(String[] args) {
-        Logic logic = LogicManager.getInstance();
-        Scanner sc = new Scanner(System.in);
-        
         while (true) {
-            CommandResult result = logic.execute(sc.nextLine(), sc.nextLine());
-            System.out.println(result);
+            displayState();
+            String input = SC.nextLine();
+            if (!isChangingState(input)) {
+                CommandResult result = executeCommand(input);
+                System.out.println(result);
+            }
+            System.out.println();
         }
         
     }
+    
+    private static boolean isChangingState(String input) {
+        if (input.equalsIgnoreCase("d")) {
+            isDecoding = true;
+            return true;
+        } else if (input.equalsIgnoreCase("e")) {
+            isDecoding = false;
+            return true;
+        }
+        
+        return false;
+    }
+    
+    private static void displayState() {
+        System.out.println(isDecoding ? "Decoding:" : "Encoding:");
+    }
+    
+    private static CommandResult executeCommand(String input) {
+        if (isDecoding) {
+            return LOGIC.execute(input, SC.nextLine());
+        } else {
+            return LOGIC.execute(input);
+        }
+    }
+    
 }

@@ -1,6 +1,7 @@
 package main.logic.parser;
 
 import main.logic.command.Command;
+import main.logic.command.EncodeCommand;
 
 public class EncoderParser extends Parser {
     
@@ -17,7 +18,7 @@ public class EncoderParser extends Parser {
     
     @Override
     public Command createCommand(String... args) {
-        return null;
+        return new EncodeCommand(args[0]);
     }
     
 }
