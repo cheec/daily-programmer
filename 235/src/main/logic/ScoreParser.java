@@ -2,20 +2,20 @@ package main.logic;
 
 import main.model.ScoreSheet;
 
-public class BowlingScoreParser implements Parser {
+public class ScoreParser implements Parser {
     
-    private static BowlingScoreParser instance;
+    private static ScoreParser instance;
     
-    private BowlingScoreParser() {}
+    private ScoreParser() {}
     
     @Override
     public ScoreSheet parse(String args) {
         return new ScoreSheet(args);
     }
     
-    public static BowlingScoreParser getInstance() {
+    public static ScoreParser getInstance() {
         if (instance == null) {
-            instance = new BowlingScoreParser();
+            instance = new ScoreParser();
         }
         return instance;
     }

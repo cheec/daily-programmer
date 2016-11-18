@@ -2,13 +2,13 @@ package main.logic;
 
 import main.model.ScoreSheet;
 
-public class BowlingScoreLogic implements Logic {
+public class ScoreLogic implements Logic {
     
-    private static BowlingScoreLogic instance;
+    private static ScoreLogic instance;
     
-    private Parser parser = BowlingScoreParser.getInstance();
+    private Parser parser = ScoreParser.getInstance();
     
-    private BowlingScoreLogic() {}
+    private ScoreLogic() {}
     
     @Override
     public int execute(String args) {
@@ -20,9 +20,9 @@ public class BowlingScoreLogic implements Logic {
         return 0;
     }
     
-    public static BowlingScoreLogic getInstance() {
+    public static ScoreLogic getInstance() {
         if (instance == null) {
-            instance = new BowlingScoreLogic();
+            instance = new ScoreLogic();
         }
         return instance;
     }

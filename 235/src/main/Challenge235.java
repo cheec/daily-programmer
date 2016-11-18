@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-import main.logic.BowlingScoreLogic;
+import main.logic.ScoreLogic;
 import main.logic.Logic;
 
 /*
@@ -16,7 +16,7 @@ public class Challenge235 {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Logic logic = BowlingScoreLogic.getInstance();
+        Logic logic = ScoreLogic.getInstance();
         
         String input = sc.nextLine();
         while (!input.equalsIgnoreCase(TERMINATE)) {
