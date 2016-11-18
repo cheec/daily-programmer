@@ -14,6 +14,9 @@ public class Challenge245 {
     private static final Scanner SC = new Scanner(System.in);
     private static final Logic LOGIC = LogicManager.getInstance();
     
+    private static final String DECODE_STATE_TOGGLE = "d";
+    private static final String ENCODE_STATE_TOGGLE = "e";
+    
     private static boolean isDecoding = true;
     
     public static void main(String[] args) {
@@ -30,10 +33,10 @@ public class Challenge245 {
     }
     
     private static boolean isChangingState(String input) {
-        if (input.equalsIgnoreCase("d")) {
+        if (input.equalsIgnoreCase(DECODE_STATE_TOGGLE)) {
             isDecoding = true;
             return true;
-        } else if (input.equalsIgnoreCase("e")) {
+        } else if (input.equalsIgnoreCase(ENCODE_STATE_TOGGLE)) {
             isDecoding = false;
             return true;
         }
