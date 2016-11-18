@@ -6,17 +6,19 @@ public class ScoreLogic implements Logic {
     
     private static ScoreLogic instance;
     
+    private ScoreSheet scoreSheet;
     private Parser parser = ScoreParser.getInstance();
     
     private ScoreLogic() {}
     
     @Override
     public int execute(String args) {
-        ScoreSheet scoreSheet = parser.parse(args);
-        return calculateScore(scoreSheet);
+        scoreSheet = parser.parse(args);
+        return calculateScore();
     }
     
-    private int calculateScore(ScoreSheet scoreSheet) {
+    private int calculateScore() {
+        
         return 0;
     }
     

@@ -7,7 +7,7 @@ import main.util.ScoreUtil;
 
 public class Frame {
     
-    List<Integer> ballScores = new ArrayList<Integer>();
+    private List<Integer> ballScores = new ArrayList<Integer>();
     
     public Frame(String args) {
         for (int i = 0; i < args.length(); i++) {
@@ -22,5 +22,14 @@ public class Frame {
                 ballScores.add(ScoreUtil.toInt(score));
             }
         }
+    }
+    
+    public List<Integer> getBallScores() {
+        return ballScores;
+    }
+    
+    @Override
+    public String toString() {
+        return ballScores.toString();
     }
 }
