@@ -7,7 +7,7 @@ public class Result {
     private boolean isSuccessful;
     
     public Result(String result) {
-        this.result = result;
+        this.result = result.trim();
         this.isSuccessful = this.result.equalsIgnoreCase(Messages.MESSAGE_SUCCESS);
     }
     
