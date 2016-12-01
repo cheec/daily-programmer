@@ -13,7 +13,7 @@ public class CutParser extends Parser {
     public Command createCommand(String... args) {
         return new CutWireCommand(args);
     }
-
+    
     public static CutParser getInstance() {
         if (instance == null) {
             instance = new CutParser();

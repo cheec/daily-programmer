@@ -19,7 +19,7 @@ public class GreenWire extends Wire {
     public String getWireName() {
         return WIRE_NAME;
     }
-
+    
     @Override
     public boolean isTrigger(Wire w) {
         if (triggers == null) {

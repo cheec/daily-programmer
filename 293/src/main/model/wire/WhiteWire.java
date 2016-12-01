@@ -22,10 +22,10 @@ public class WhiteWire extends Wire {
         }
         return triggers.contains(w);
     }
-
+    
     @Override
     protected void initTriggers() {
         triggers = new HashSet<Wire>(Arrays.asList(this, new BlackWire()));
     }
-
+    
 }

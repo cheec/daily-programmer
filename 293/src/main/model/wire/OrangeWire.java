@@ -12,8 +12,7 @@ public class OrangeWire extends Wire {
     
     @Override
     protected void initTriggers() {
-        triggers =
-                new HashSet<Wire>(Arrays.asList(new WhiteWire(), this, new PurpleWire(), new GreenWire()));
+        triggers = new HashSet<Wire>(Arrays.asList(new WhiteWire(), this, new PurpleWire(), new GreenWire()));
     }
     
     @Override
